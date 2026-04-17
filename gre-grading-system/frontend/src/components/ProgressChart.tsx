@@ -49,8 +49,8 @@ export default function ProgressChart({
     }),
   }));
 
-  const showDimensions =
-    selectedDimensions.length > 0 ? selectedDimensions : ["overall"];
+  const showDimensions: GradingDimension[] =
+    selectedDimensions.length > 0 ? selectedDimensions : [];
 
   return (
     <div className="h-80">
@@ -81,9 +81,7 @@ export default function ProgressChart({
           />
 
           {/* Show selected dimensions */}
-          {showDimensions
-            .filter((d) => d !== "overall")
-            .map((dim) => (
+          {showDimensions.map((dim) => (
               <Line
                 key={dim}
                 type="monotone"
