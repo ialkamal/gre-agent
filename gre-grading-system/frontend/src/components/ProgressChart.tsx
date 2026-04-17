@@ -82,17 +82,17 @@ export default function ProgressChart({
 
           {/* Show selected dimensions */}
           {showDimensions.map((dim) => (
-              <Line
-                key={dim}
-                type="monotone"
-                dataKey={dim}
-                name={DIMENSION_LABELS[dim]}
-                stroke={DIMENSION_COLORS[dim] || "#666"}
-                strokeWidth={2}
-                dot={{ r: 3 }}
-                strokeDasharray="5 5"
-              />
-            ))}
+            <Line
+              key={dim}
+              type="monotone"
+              dataKey={dim}
+              name={DIMENSION_LABELS[dim]}
+              stroke={DIMENSION_COLORS[dim] || "#666"}
+              strokeWidth={2}
+              dot={{ r: 3 }}
+              strokeDasharray="5 5"
+            />
+          ))}
         </LineChart>
       </ResponsiveContainer>
     </div>

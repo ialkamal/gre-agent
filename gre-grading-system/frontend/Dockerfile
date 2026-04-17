@@ -9,8 +9,11 @@ RUN npm install
 # Copy application
 COPY . .
 
+# Build for production
+RUN npm run build
+
 # Expose port
 EXPOSE 3000
 
-# Development mode
-CMD ["npm", "run", "dev"]
+# Production mode
+CMD ["npm", "start"]
