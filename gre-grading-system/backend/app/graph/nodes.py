@@ -23,6 +23,9 @@ async def load_student_context(state: dict) -> dict[str, Any]:
     student_id = state.get("student_id")
     
     try:
+        # Ensure student exists before any FK-dependent operations
+        await memory.get_or_create_student(student_id)
+        
         # Load weak areas
         weak_areas = await memory.get_weak_areas(student_id)
         
